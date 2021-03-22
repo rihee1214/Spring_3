@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<!-- Pool 객체 생성 connection까지의 과정을 자동으로 해준다.-->
+		<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+			<property name="username" value="scott"></property>
+			<property name="password" value="tiger"></property>
+			<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"></property>
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		</bean>
+		
+		<!-- Connection 객체와 XML 파일의 위치를 설정해어야한다 -->
+		<!-- Connection 객체에 대한 정보와 XML파일의 위치 -->
+		<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"></property>
+			<property name="mapperLocations" value="classpath:database/mappers/*Mapper.xml"></property>
+		</bean>
+		<!-- 미리 전송과 결과 맵핑을 위한 객체 -->
+		<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+			<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
+		</bean>
+</beans>
