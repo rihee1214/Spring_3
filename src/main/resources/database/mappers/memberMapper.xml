@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iu.s3.member.MemberDAO">
+	<update id="memberUpdate" parameterType="com.iu.s3.member.MemberDTO">
+		UPDATE MEMBER SET PW=#{pw}, NAME=#{name},EMAIL=#{email},PHONE=#{phone} WHERE ID=#{id}
+	</update>
+	<delete id="memberDelete" parameterType="com.iu.s3.member.MemberDTO">
+		DELETE MEMBER WHERE ID=#{id}
+	</delete>
+	<insert id="memberJoin" parameterType="com.iu.s3.member.MemberDTO">
+		INSERT INTO MEMBER VALUES(#{id}, #{pw}, #{name}, #{email}, #{phone})
+	</insert>
+	<select id="memberLogin" parameterType="com.iu.s3.member.MemberDTO" resultType="com.iu.s3.member.MemberDTO">
+		SELECT * FROM MEMBER WHERE ID=#{id} and PW=#{pw}
+	</select>
+</mapper>
