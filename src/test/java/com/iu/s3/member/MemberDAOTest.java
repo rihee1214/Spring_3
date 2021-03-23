@@ -23,10 +23,8 @@ public class MemberDAOTest extends MyAbstractTest {
 	public void memberUpdateTest() throws Exception{
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("id10");
-		memberDTO.setPw("pw9");
-		memberDTO.setName("id10");
-		memberDTO.setEmail("id10@id10.id10");
-		memberDTO.setPhone("01000000000");
+		memberDTO=memberDAO.memberLogin(memberDTO);
+		memberDTO.setPw("pw999");
 		assertEquals(memberDAO.memberUpdate(memberDTO), 1);
 	}
 	
