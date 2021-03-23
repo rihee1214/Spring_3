@@ -12,8 +12,7 @@
 			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		</bean>
 		
-		<!-- Connection 객체와 XML 파일의 위치를 설정해어야한다 -->
-		<!-- Connection 객체에 대한 정보와 XML파일의 위치 -->
+		<!-- Connection 객체에 대한 정보와 SQL문 저장된 XML 파일의 위치를 설정 -->
 		<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
 			<property name="dataSource" ref="dataSource"></property>
 			<property name="mapperLocations" value="classpath:database/mappers/*Mapper.xml"></property>
