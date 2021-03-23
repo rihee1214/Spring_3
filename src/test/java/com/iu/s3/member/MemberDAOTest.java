@@ -12,7 +12,7 @@ public class MemberDAOTest extends MyAbstractTest {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-	@Test
+	//@Test
 	public void memberDeleteTest() throws Exception{
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("id10");
@@ -39,7 +39,7 @@ public class MemberDAOTest extends MyAbstractTest {
 		assertEquals(memberDAO.memberJoin(memberDTO), 1);
 	}
 	
-	//@Test
+	@Test
 	public void memberLoginTest() throws Exception{
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("id1");

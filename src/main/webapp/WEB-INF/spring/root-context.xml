@@ -16,7 +16,10 @@
 		<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
 			<property name="dataSource" ref="dataSource"></property>
 			<property name="mapperLocations" value="classpath:database/mappers/*Mapper.xml"></property>
-		</bean>
+			<property name="configLocation" value="classpath:database/config/conf.xml"></property>
+		</bean>	<!-- mapper는 여러개 올 수 잇게 되어있지만 conf파일은 딱 하나만 올 수 있다. -->
+		<!-- conf파일로 DTO연결은 가능하지만 mapper의 naemspace는 DTO같은 거처럼 연결해줄수 없다. -->
+		
 		<!-- 미리 전송과 결과 맵핑을 위한 객체 -->
 		<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
 			<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
