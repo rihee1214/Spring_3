@@ -1,10 +1,5 @@
 package com.iu.s3.member;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -30,7 +25,7 @@ public class MemberDAO {
 	}
 	
 	//login - id pw를 받아서 조회
-	public MemberDTO login(MemberDTO memberDTO)throws Exception{
+	public MemberDTO memberLogin(MemberDTO memberDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"memberLogin", memberDTO);
 	}
 
