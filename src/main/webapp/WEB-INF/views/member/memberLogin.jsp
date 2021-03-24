@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h1>Member Login</h1>
-	<form action="./memberLogin" method="Post">
-		ID<input type="text" name="id">
-		PW<input type="password" name="pw">
+	<form action="memberLogin" method="post">
+		ID<input type="text" name="id"><br>
+		PW<input type="password" name="pw"><br>
 		<button>login</button>
 	</form>
 </body>

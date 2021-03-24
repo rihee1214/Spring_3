@@ -39,6 +39,11 @@ public class BankBookController {
 	@RequestMapping(value="bankbookUpdate", method = RequestMethod.POST)
 	public String bankbookUpdate(BankBookDTO bankBookDTO)throws Exception{
 		int result = bankBookService.bankbookUpdate(bankBookDTO);
+		if(result>=1) {
+			System.out.println("성공");
+		}else {
+			System.out.println("실패");
+		}
 		return "redirect:./bankbookList";
 	}
 	
