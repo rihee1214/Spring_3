@@ -14,8 +14,7 @@
 		DELETE BANKBOOK WHERE BOOKNUMBER = #{bookNumber}
 	</delete>
 	<update id="bankbookUpdate" parameterType="com.iu.s3.bankbook.BankBookDTO">
-		UPDATE BANKBOOK SET BOOKNAME = #{bookName}, BOOKRATE = #{bookRate},
-		 BOOKSALE= #{bookSale} WHERE BOOKNUMBER = #{bookNumber}
+		UPDATE BANKBOOK SET BOOKNAME = #{bookName}, BOOKRATE = #{bookRate}, BOOKSALE= #{bookSale} WHERE BOOKNUMBER = #{bookNumber}
 	</update>
 </mapper>
 
