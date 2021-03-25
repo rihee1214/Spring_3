@@ -15,7 +15,7 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping(value = "memberLogin")
-	public void memberLogin() {	}
+	public void memberLogin()throws Exception{	}
 	
 	@RequestMapping(value = "memberLogin", method = RequestMethod.POST)
 	public String memberLogin(MemberDTO memberDTO, HttpSession session)throws Exception{
@@ -36,14 +36,14 @@ public class MemberController {
 			return "/member/memberJoin";
 		}
 	}
-
-	@RequestMapping(value = "memberUpdate")
-	public void memberUpdate()throws Exception{
-		
-	}
 	
-	@RequestMapping(value = "memberDelete")
-	public void memberDelete()throws Exception{
-		
+	@RequestMapping(value = "memberLogout")
+	public String memberLogout(HttpSession session)throws Exception{
+		session.invalidate();//세션의 유지기간을 0으로 만들어서 바로 종료시킨다.
+		return "redirect:../";
 	}
+
+	@RequestMapping(value = "memberPage")
+	public void memberUpdate()throws Exception{	}
+	
 }
