@@ -28,5 +28,6 @@
 	</table>
 	<a href="./memberDelete">회원탈퇴</a>
 	<a href="./memberUpdate">정보수정</a>
+	<a href="../account/accountList">계좌관리</a>
 </body>
 </html>

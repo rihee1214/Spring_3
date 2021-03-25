@@ -25,6 +25,7 @@
 			</tr>
 		</tbody>
 	</table>
+	<a href="../account/accountInsert">계좌개설</a>
 	<c:catch>
 		<c:if test="${not empty member && member.id eq 'admin'}">
 			<a href="./bankbookDelete?bookNumber=${dto.bookNumber}">Delete</a>
