@@ -58,8 +58,8 @@ public class MemberController {
 	
 	@RequestMapping(value = "memberUpdate", method = RequestMethod.POST)
 	public String memberUpdate(MemberDTO memberDTO, HttpSession session)throws Exception{
-		memberService.memberUpdate(memberDTO);
 		session.invalidate();
+		memberService.memberUpdate(memberDTO);
 		return "redirect:../";
 	}
 }

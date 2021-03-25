@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="memberUpdate" method="post">
-		<input type="hidden" readonly="readonly" name="id">
+		<input type="hidden" readonly="readonly" name="id" value="${sessionScope.member.id}">
 		PW<input type="password" name="pw"><br>
 		Name<input type="text" name="name" value="${sessionScope.member.name}"><br>
 		Email<input type="text" name="email" value="${sessionScope.member.email}"><br>
