@@ -12,7 +12,6 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>PW</th>
 				<th>Name</th>
 				<th>Email</th>
 				<th>Phone</th>
@@ -21,12 +20,13 @@
 		<tbody>
 			<tr>
 				<td>${sessionScope.member.id}</td>
-				<td>${sessionScope.member.pw}</td>
 				<td>${sessionScope.member.name}</td>
 				<td>${sessionScope.member.email}</td>
 				<td>${sessionScope.member.phone}</td>
 			</tr>
 		</tbody>
 	</table>
+	<a href="./memberDelete">회원탈퇴</a>
+	<a href="./memberUpdate">정보수정</a>
 </body>
 </html>
