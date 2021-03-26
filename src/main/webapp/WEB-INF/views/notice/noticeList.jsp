@@ -31,5 +31,8 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<c:if test="${not empty sessionScope.member and sessionScope.member eq 'admin'}">
+		<a href="./noticeInsert">add</a>
+	</c:if>
 </body>
 </html>

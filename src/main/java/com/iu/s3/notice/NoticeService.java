@@ -16,6 +16,7 @@ public class NoticeService {
 	}
 	
 	public NoticeDTO noticeSelect(NoticeDTO noticeDTO) throws Exception{
+		noticeDAO.noticeHit(noticeDTO);
 		return noticeDAO.noticeSelect(noticeDTO);
 	}
 	
@@ -31,7 +32,4 @@ public class NoticeService {
 		return noticeDAO.noticeUpdate(noticeDTO);
 	}
 	
-	public int noticeHit(NoticeDTO noticeDTO) throws Exception{
-		return noticeDAO.noticeHit(noticeDTO);
-	}
 }

@@ -36,8 +36,4 @@ public class NoticeController {
 	public void noticeUpdate() throws Exception{
 		
 	}
-	
-	public void noticeHit() throws Exception{
-		
-	}
 }
