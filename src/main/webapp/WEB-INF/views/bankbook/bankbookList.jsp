@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:import url="../template/header.jsp"></c:import>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<c:import url="../template/body.jsp"></c:import>
 	<h1>BankBook List</h1>
 	
 	<table>

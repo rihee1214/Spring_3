@@ -1,5 +1,7 @@
 package com.iu.s3.account;
 
+import java.util.Calendar;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +29,12 @@ public class AccountController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("accountInsert")
+	public ModelAndView accountInsert(AccountDTO accountDTO, HttpSession session)throws Exception{
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		accountDTO.setId(memberDTO.getId());
+		Calendar cal = Calendar.getInstance();
+		
+		return this.accountList(session);
+	}
 }
