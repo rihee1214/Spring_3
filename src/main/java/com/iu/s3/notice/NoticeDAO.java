@@ -13,27 +13,27 @@ public class NoticeDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s3.notice.NoticeDAO.";
 	
-	public int noticeInsert(NoticeDTO noticeDTO) {
+	public int noticeInsert(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.insert(NAMESPACE+"noticeInsert",noticeDTO);
 	}
 	
-	public NoticeDTO noticeSelect(NoticeDTO noticeDTO) {
+	public NoticeDTO noticeSelect(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"noticeSelect", noticeDTO);
 	}
 	
-	public List<NoticeDTO> noticeList(NoticeDTO noticeDTO) {
-		return sqlSession.selectList(NAMESPACE+"noticeList", noticeDTO);
+	public List<NoticeDTO> noticeList() throws Exception{
+		return sqlSession.selectList(NAMESPACE+"noticeList");
 	}
 	
-	public int noticeUpdate(NoticeDTO noticeDTO) {
+	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.update(NAMESPACE+"noticeUpdate", noticeDTO);
 	}
 	
-	public int noticeHit(NoticeDTO noticeDTO) {
+	public int noticeHit(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.update(NAMESPACE+"noticeHit", noticeDTO);
 	}
 	
-	public int noticeDelete(NoticeDTO noticeDTO) {
+	public int noticeDelete(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.delete(NAMESPACE+"noticeDelete", noticeDTO);
 	}
 }
