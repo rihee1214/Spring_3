@@ -23,7 +23,7 @@
 			<c:forEach items="${nList}" var="dto">
 				<tr>
 					<td>${dto.noticeNumber}</td>
-					<td><a href="./noticeSelect?noticeNumber=${dto.noticeNumber}">0${dto.noticeSub}</a></td>
+					<td><a href="./noticeSelect?noticeNumber=${dto.noticeNumber}">${dto.noticeSub}</a></td>
 					<td>${dto.id}</td>
 					<td>${dto.hit}</td>
 					<td>${dto.noticeDate}</td>
