@@ -13,7 +13,6 @@
 	<h1>
 		<a href="./bankbook/bankbookList">BankBook List</a>
 	</h1>
-
 	<c:if test="${empty member}">
 		<h1>
 			<a href="./member/memberLogin">Member Login</a>
