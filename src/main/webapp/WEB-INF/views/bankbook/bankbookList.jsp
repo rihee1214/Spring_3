@@ -12,12 +12,12 @@
 	<c:import url="../template/body.jsp"></c:import>
 	<h1>BankBook List</h1>
 	
-	<table>
-		<thead>
+	<table class="table">
+		<thead class="thead-dark">
 			<tr>
-				<th>Name</th>
-				<th>Rate</th>
-				<th>Sale</th>
+				<th class="col">Name</th>
+				<th class="col">Rate</th>
+				<th class="col">Sale</th>
 			</tr>
 		</thead>
 		<tbody>
