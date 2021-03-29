@@ -5,10 +5,10 @@
 		SELECT * FROM NOTICE
 	</select>
 	<select id="noticeSelect" parameterType="NoticeDTO" resultType="NoticeDTO">
-		SELECT * FROM NOTICE WHERE NOTICENUMBER=${noticeNumber}
+		SELECT * FROM NOTICE WHERE NOTICENUMBER=#{noticeNumber}
 	</select>
 	<insert id="noticeInsert" parameterType="NoticeDTO">
-		INSERT INTO NOTICE VALUES(NOTICE_NN_SEQ,${noticeSub},${id},${noticeContent},0,SYSDATE)
+		INSERT INTO NOTICE VALUES(NOTICE_NN_SEQ,#{noticeSub},#{id},#{noticeContent},0,SYSDATE)
 	</insert>
 	<delete id="noticeDelete" parameterType="NoticeDTO">
 		DELETE NOTICE WHERE NOTICENUMBER=#{noticeNumber}

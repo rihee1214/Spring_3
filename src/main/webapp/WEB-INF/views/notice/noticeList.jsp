@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="../template/header.jsp"></c:import>
 <title>Insert title here</title>
 </head>
 <body>
+<c:import url="../template/body.jsp"></c:import>
 	<h1>Notice List</h1>
 	<table>
 		<thead>
@@ -16,7 +18,7 @@
 				<th>제목</th>
 				<th>ID</th>
 				<th>조회수</th>
-				<th>조회일자</th>
+				<th>안내일자</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -31,8 +33,8 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<c:if test="${not empty sessionScope.member and sessionScope.member eq 'admin'}">
-		<a href="./noticeInsert">add</a>
+	<c:if test="${not empty sessionScope.member and sessionScope.member.id eq 'admin'}">
+		<a href="./noticeInsert">notice add</a>
 	</c:if>
 </body>
 </html>

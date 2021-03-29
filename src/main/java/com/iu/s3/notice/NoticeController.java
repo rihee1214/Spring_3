@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -25,8 +26,13 @@ public class NoticeController {
 		model.addAttribute("nDTO", noticeService.noticeSelect(noticeDTO));
 	}
 	
-	public void noticeInsert() throws Exception{
-		
+	@RequestMapping("noticeInsert")
+	public void noticeInsert() throws Exception{}
+	
+	@RequestMapping(value = "noticeInsert", method = RequestMethod.POST)
+	public String noticeInsert(NoticeDTO noticeDTO) throws Exception{
+		noticeService.noticeInsert(noticeDTO);
+		return "redirect:./noticeList";
 	}
 	
 	public void noticeDelete() throws Exception{

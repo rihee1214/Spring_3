@@ -16,8 +16,9 @@ public class NoticeService {
 	}
 	
 	public NoticeDTO noticeSelect(NoticeDTO noticeDTO) throws Exception{
+		noticeDTO=noticeDAO.noticeSelect(noticeDTO);
 		noticeDAO.noticeHit(noticeDTO);
-		return noticeDAO.noticeSelect(noticeDTO);
+		return noticeDTO;
 	}
 	
 	public int noticeInsert(NoticeDTO noticeDTO) throws Exception{
