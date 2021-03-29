@@ -10,6 +10,7 @@
 </head>
 <body>
 <c:import url="../template/body.jsp"></c:import>
+<h1>notice insert</h1>
 <form action="./noticeInsert" method="post">
 	Subject<input type="text" name="noticeSub">
 	내용<input type="text" name="noticeContent">
