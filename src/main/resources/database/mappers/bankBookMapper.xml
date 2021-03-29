@@ -7,8 +7,8 @@
 	<select id="bankbookSelect" parameterType="java.lang.Long" resultType="com.iu.s3.bankbook.BankBookDTO">
 		select * from bankbook where bookNumber=#{num}
 	</select>
-	<select id="bankbookList" resultType="com.iu.s3.bankbook.BankBookDTO">
-		select * from bankbook order by bookNumber desc
+	<select id="bankbookList" parameterType="Pager" resultType="com.iu.s3.bankbook.BankBookDTO">
+		select * from (select rownum rn bb.* from bankbook bb) where ro between #{startRow} and #{lastRow} order by bookNumber desc
 	</select>
 	<delete id="bankbookDelete" parameterType="com.iu.s3.bankbook.BankBookDTO">
 		DELETE BANKBOOK WHERE BOOKNUMBER = #{bookNumber}
@@ -16,5 +16,8 @@
 	<update id="bankbookUpdate" parameterType="com.iu.s3.bankbook.BankBookDTO">
 		UPDATE BANKBOOK SET BOOKNAME = #{bookName}, BOOKRATE = #{bookRate}, BOOKSALE= #{bookSale} WHERE BOOKNUMBER = #{bookNumber}
 	</update>
+	<select id="bankbookTotal" parameterType="java.lang.Long">
+		SELECT COUNT(*) FROM BANKBOOK
+	</select>
 </mapper>
 

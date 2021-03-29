@@ -5,14 +5,21 @@ public class Pager {
 	private long startRow;
 	private long lastRow;
 	private long curPage;
-	private long totalPager;
+	private long startnum;
+	private long lastnum;
 	
 	
-	public long getTotalPager() {
-		return totalPager;
+	public long getStartnum() {
+		return startnum;
 	}
-	public void setTotalPager(long totalPager) {
-		this.totalPager = totalPager;
+	public void setStartnum(long startnum) {
+		this.startnum = startnum;
+	}
+	public long getLastnum() {
+		return lastnum;
+	}
+	public void setLastnum(long lastnum) {
+		this.lastnum = lastnum;
 	}
 	public long getCurPage() {
 		if(curPage<1) {

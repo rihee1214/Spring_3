@@ -35,9 +35,11 @@
 	</table>
 	<div>
 	<ul class="pagination">
-		<c:forEach begin="1" end="${pager.totalPager}" var="i">
+		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		<c:forEach begin="${pager.startnum}" end="${pager.lastnum}" var="i">
 		  <li class="page-item"><a class="page-link" href="./noticeList?curPage=${i}">${i}</a></li>
 		</c:forEach>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
 	</ul>
 	</div>
 	<c:if test="${not empty sessionScope.member and sessionScope.member.id eq 'admin'}">
