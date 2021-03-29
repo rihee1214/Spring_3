@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.iu.s3.util.Pager;
+
 @Controller
 @RequestMapping(value = "/notice/**")
 public class NoticeController {
@@ -15,8 +17,10 @@ public class NoticeController {
 	private NoticeService noticeService;
 	
 	@RequestMapping("noticeList")
-	public ModelAndView noticeList(ModelAndView model) throws Exception{
-		model.addObject("nList", noticeService.noticeList());
+	public ModelAndView noticeList(Pager pager) throws Exception{
+		ModelAndView model = new ModelAndView();
+		model.addObject("nList", noticeService.noticeList(pager));
+		model.addObject("pager", pager);
 		model.setViewName("/notice/noticeList");
 		return model;
 	}

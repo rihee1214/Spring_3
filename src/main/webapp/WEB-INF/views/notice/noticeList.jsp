@@ -33,6 +33,13 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<div>
+	<ul class="pagination">
+		<c:forEach begin="1" end="${pager.totalPager}" var="i">
+		  <li class="page-item"><a class="page-link" href="./noticeList?curPage=${i}">${i}</a></li>
+		</c:forEach>
+	</ul>
+	</div>
 	<c:if test="${not empty sessionScope.member and sessionScope.member.id eq 'admin'}">
 		<a href="./noticeInsert">notice add</a>
 	</c:if>

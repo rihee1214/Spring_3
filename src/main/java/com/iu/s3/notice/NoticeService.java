@@ -5,14 +5,22 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.iu.s3.util.Pager;
+
 @Service
 public class NoticeService {
 	
 	@Autowired
 	private NoticeDAO noticeDAO;
 	
-	public List<NoticeDTO> noticeList() throws Exception{
-		return noticeDAO.noticeList();
+	public List<NoticeDTO> noticeList(Pager pager) throws Exception{
+		long perpager = 10;
+		pager.setStartRow((pager.getCurPage()-1)*perpager+1);
+		pager.setLastRow(pager.getCurPage()*perpager);
+		long totalCount=72;
+		long totalPage=totalCount%perpager==0?totalCount/perpager:totalCount/perpager+1;
+		pager.setTotalPager(totalPage);
+		return noticeDAO.noticeList(pager);
 	}
 	
 	public NoticeDTO noticeSelect(NoticeDTO noticeDTO) throws Exception{
