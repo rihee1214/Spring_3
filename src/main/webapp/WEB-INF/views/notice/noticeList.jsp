@@ -35,13 +35,33 @@
 	</table>
 	<div>
 	<ul class="pagination">
-		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+	<c:if test="${pager.pre}">
+		<li class="page-item"><a class="page-link" href="./noticeList?curPage=${pager.startnum-1}">Previous</a></li>
+		</c:if>
 		<c:forEach begin="${pager.startnum}" end="${pager.lastnum}" var="i">
 		  <li class="page-item"><a class="page-link" href="./noticeList?curPage=${i}">${i}</a></li>
 		</c:forEach>
-		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		<c:if test="${pager.next}">
+		<li class="page-item"><a class="page-link" href="./noticeList?curPage=${pager.lastnum+1}">Next</a></li>
+		</c:if>
 	</ul>
 	</div>
+<div class="input-group mt-3 mb-3">
+<form action="./noticeList?noticeSub" class="form-inline">
+  <div class="input-group-prepend">
+   <select class="form-control" id="sel1">
+    <option>Title</option>
+    <option>Contents</option>
+    <option>Writer</option>
+  </select>
+  </div>
+  <input type="text" class="form-control" placeholder="Username">
+    <div class="input-group-append">
+    <button class="btn btn-success" type="submit">Search</button>
+  </div>
+ </form> 
+</div>
+
 	<c:if test="${not empty sessionScope.member and sessionScope.member.id eq 'admin'}">
 		<a href="./noticeInsert">notice add</a>
 	</c:if>

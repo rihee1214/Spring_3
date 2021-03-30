@@ -4,10 +4,17 @@
 <!doctype html>
 <html lang="ko">
 <c:import url="./template/header.jsp"></c:import>
+<script type="text/javascript">
+	alert('helloword');
+</script>
 <head>
+<link rel="stylesheet" href="./resources/css/test.css" >
 <title>Hello, world!</title>
 </head>
 <body>
+<div class="fakeimg">
+	<img alt="사탄도 울고가는 광고" src="https://d2gd6pc034wcta.cloudfront.net/images/logo@2x.png">
+</div>
 	<c:import url="./template/body.jsp"></c:import>
 	<h1>Hello, world!</h1>
 	<h1>
@@ -31,5 +38,6 @@
 			<a href="./member/memberLogout">Logout</a>
 		</h1>
 	</c:if>
+	<script type="text/javascript" src="./resources/js/test.js"></script>
 </body>
 </html>

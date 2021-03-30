@@ -7,8 +7,22 @@ public class Pager {
 	private long curPage;
 	private long startnum;
 	private long lastnum;
+	private boolean pre;	//이전 블록이 존재하면 true 없으면 false
+	private boolean next;	//이후 블록이 존재하면 true 없으면 false
 	
 	
+	public boolean isPre() {
+		return pre;
+	}
+	public void setPre(boolean pre) {
+		this.pre = pre;
+	}
+	public boolean isNext() {
+		return next;
+	}
+	public void setNext(boolean next) {
+		this.next = next;
+	}
 	public long getStartnum() {
 		return startnum;
 	}

@@ -18,7 +18,7 @@ public class NoticeService {
 		long perblock = 5;
 		pager.setStartRow((pager.getCurPage()-1)*perpager+1);
 		pager.setLastRow(pager.getCurPage()*perpager);
-//		long totalCount=72; 
+		long totalCount=72; 
 //		long totalPage=totalCount%perpager==0?totalCount/perpager:totalCount/perpager+1;
 //		long totalblock=totalCount%perblock==0?totalCount/perblock:totalCount/perblock+1;
 		long curBlock = pager.getCurPage()/perblock;
@@ -29,6 +29,19 @@ public class NoticeService {
 		long lastnum = curBlock*perblock;
 		pager.setStartnum(startnum);
 		pager.setLastnum(lastnum);
+		//curblock이 마지막 block일때
+		if(curBlock==totalCount) {
+			lastnum=totalCount%totalCount;
+		}
+		
+		//이전, 다음 블록의 존재 여부를 판단
+		if(curBlock>1) {
+			pager.setPre(true);
+		}
+		if(curBlock<2) {
+			pager.setNext(true);
+		}
+		
 		return noticeDAO.noticeList(pager);
 	}
 	
